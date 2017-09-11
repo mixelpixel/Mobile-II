@@ -17,6 +17,23 @@
 For your assignment you will be creating a mobile application with four views that connects to an api:
 https://mobile-server-ii.herokuapp.com/ - OKAY √
 
+### Install & setup notes
+```console
+$  npm install axios react-navigation
+    npm notice created a lockfile as package-lock.json. You should commit this file.
+    npm WARN react-navigation@1.0.0-beta.11 requires a peer of react@* but none was installed.
+    npm WARN react-navigation@1.0.0-beta.11 requires a peer of react-native@* but none was installed.
+    npm WARN react-native-drawer-layout-polyfill@1.3.2 requires a peer of react-native@* but none was installed.
+    npm WARN react-native-tab-view@0.0.65 requires a peer of react@* but none was installed.
+    npm WARN react-native-tab-view@0.0.65 requires a peer of react-native@* but none was installed.
+    npm WARN react-native-drawer-layout@1.3.2 requires a peer of react@* but none was installed.
+    npm WARN react-native-drawer-layout@1.3.2 requires a peer of react-native@* but none was installed.
+
+    + react-navigation@1.0.0-beta.11
+    + axios@0.16.2
+    added 10 packages, removed 607 packages and updated 20 packages in 38.192s
+```
+
 Home: - OKAY √
 This view will have two buttons.
 Button one will say `Sign In` and will navigate the user to the `SignIn` component.

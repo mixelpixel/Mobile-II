@@ -1,34 +1,45 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View,
+  Button,
+  TextInput
+} from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import Content from './Content';
+import Async from './Async';
 
-import Home from './components/home';
-// import SignIn from './components/signin';
-// import SignUp from './components/signup';
-// import Content from './components/content';
-// import Async from './Async';
-
-// export default class App extends React.Component {
-class App extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // email: ''
+      email: ''
     };
   }
 
   static navigationOptions = {
-    title: 'App Page'
+    title: 'Home Page'
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>This is from the App container</Text>
-        <Home />
-        {/* <SignIn />
-        <SignUp />
-        <Content /> */}
+        <Text>Enter your email address:</Text>
+        <TextInput 
+          style={{ width: 50 }} 
+          onChangeText={(email) => this.setState({ email })} 
+          value={this.state.email} />
+        <Button 
+          title={'View Content'} 
+          onPress={() => {
+            this.props.navigation.navigate('Content');
+          }} />
+        <Button 
+          title={'View Async Content'} 
+          onPress={() => {
+            this.props.navigation.navigate('Async');
+          }} />
       </View>
     );
   }
@@ -36,21 +47,17 @@ class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    backgroundColor: 'whitesmoke',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // marginTop: 20,
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
 const Routes = StackNavigator({
-  App: { screen: App ,}
-  // Home: { screen: Home },
-  // SignIn: { screen: SignIn },
-  // SignUp: { screen: SignUp },
-  // Content: { screen: Content },
-  // Async: { screen: Async },
+  Home: { screen: Home },
+  Content: { screen: Content },
+  Async: { screen: Async },
 });
 
 export default Routes;

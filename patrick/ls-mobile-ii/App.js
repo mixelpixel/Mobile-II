@@ -10,16 +10,16 @@ import Home from './components/home';
 
 // export default class App extends React.Component {
 class App extends React.Component {
-constructor(props) {
-  super(props);
-  this.state = {
-    // email: ''
-  };
-}
+  constructor(props) {
+    super(props);
+    this.state = {
+      // email: ''
+    };
+  }
 
-static navigationOptions = {
-  title: 'App Page'
-}
+  static navigationOptions = {
+    title: 'App Page'
+  }
 
   render() {
     return (
@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
 });
 
 const Routes = StackNavigator({
-  Home: { screen: Home },
+  App: { screen: App ,}
+  // Home: { screen: Home },
   // SignIn: { screen: SignIn },
   // SignUp: { screen: SignUp },
   // Content: { screen: Content },

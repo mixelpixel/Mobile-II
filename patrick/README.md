@@ -12,12 +12,12 @@
 * `this.props.navigation.navigate('Route')`
 * `AsyncStorage` (It's like `localStorage` in the browser but async)
 
-## Assignment
+## Assignment - OKAY √
 
 For your assignment you will be creating a mobile application with four views that connects to an api:
 https://mobile-server-ii.herokuapp.com/ - OKAY √
 
-### Install & setup notes
+### Install & setup notes - OKAY √
 ```console
 $  npm install axios react-navigation
     npm notice created a lockfile as package-lock.json. You should commit this file.
@@ -33,6 +33,8 @@ $  npm install axios react-navigation
     + axios@0.16.2
     added 10 packages, removed 607 packages and updated 20 packages in 38.192s
 ```
+
+- there was some weirdness with setup... Possibly worth trying the CLI tools next go around?
 
 Home: - OKAY √
 This view will have two buttons.
@@ -92,6 +94,9 @@ Show the user an error message if the email they provide is already in the datab
 If the user provides an incorrect email/password combo display an error message in the `SignIn` component.
 Note: Never tell a user that they entered an incorrect password, always say incorrect email or password.
 This makes it so people can't figure out what emails you have in your database.
+
+NOTE: per John Wells on Slack, this might be worth trying if the above AsynStorage code snippets are inadequate:
+https://www.youtube.com/watch?v=y9B5BOGdqDE
 
 
 ### API Routes - OKAY √

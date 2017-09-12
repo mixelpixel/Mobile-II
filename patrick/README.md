@@ -17,7 +17,7 @@
 For your assignment you will be creating a mobile application with four views that connects to an api:
 https://mobile-server-ii.herokuapp.com/ - OKAY √
 
-### Install & setup notes - OKAY √
+#### Install & setup notes - OKAY √
 ```console
 $  npm install axios react-navigation
     npm notice created a lockfile as package-lock.json. You should commit this file.
@@ -32,16 +32,18 @@ $  npm install axios react-navigation
     + react-navigation@1.0.0-beta.11
     + axios@0.16.2
     added 10 packages, removed 607 packages and updated 20 packages in 38.192s
+               ?????   ^^^^^^^^^^^   ?????
 ```
 
 - there was some weirdness with setup... Possibly worth trying the CLI tools next go around?
+- adding `require 'axios';` to App.js _may_ have had something to do with making the install work???
 
-Home: - OKAY √
-This view will have two buttons.
-Button one will say `Sign In` and will navigate the user to the `SignIn` component.
-Button two will say `Sign Up` and will navigate the user to the `SignUp` component.
+### Home: - OKAY √
+This view will have two buttons. - OKAY √ (see `example` code)
+Button one will say `Sign In` and will navigate the user to the `SignIn` component. - OKAY √
+Button two will say `Sign Up` and will navigate the user to the `SignUp` component. - OKAY √
 
-SignUp: - OKAY √
+### SignUp: - OKAY √
 This view will have two input fields and a button that says `Sign Up`.
 The first input field will be for the `email`.
 The second input field will be for the `password`.
@@ -49,20 +51,20 @@ When the user clicks the `Sign Up` button you will use `axios` to make a `POST` 
 If the user successfully signs up then you will navigate the user to the `Content` component.
 Be sure to save the JWT token to `AsyncStorage`.
 
-SignIn: - OKAY √
+### SignIn: - OKAY √
 This view will have two input fields and a button that says `Sign In`.
 The first input field will be for the `email`.
 The second input field will be for the `password`.
 When the user clicks the `Sign In` button you will use `axios` to make a `POST` request to `/signin`.
 If you receive a valid JWT token then save it to `AsyncStorage` and then navigate the user to `Content`. (Example below)
 
-Content: - OKAY √
+### Content: - OKAY √
 This component will take the JWT token saved to `AsyncStorage` and will put it on the header of a
 `POST` request to `/users`.  The header key is `authorization`. (Example below)
 Make this HTTP request from inside of `componentDidMount` and run it whenever this component is rendered.
 Once you receive back the list of users from the database then display them using a `FlatList` component.
 
-Note about JWTs: - OKAY √
+### Note about JWTs: - OKAY √
 The API in this project uses JWTs to authenticate its clients.  Upon successful authentication you will receive a token from the server.  This token needs to be included on all subsequent requests to protected routes.  The JWT will look like this:
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
@@ -107,7 +109,7 @@ https://www.youtube.com/watch?v=y9B5BOGdqDE
 
 
 
-## Extra Credit - OKAY √
+# Extra Credit - OKAY √
 
 For this assignment you will be creating a todo list that will take advantage
 of the API you used for the first portion of this project.  Once the user has authenticated then you can make requests to the protected routes that control the `todo` collection in the database.
@@ -115,7 +117,7 @@ of the API you used for the first portion of this project.  Once the user has au
 
 Address: https://mobile-server-ii.herokuapp.com/
 
-## Routes - OKAY √
+## Extra Credit Routes - OKAY √
 
 [POST] `/users` - Requires an `email` and `password` property on the body.
 Returns a JWT and the user's info. Creates a new user in the database.

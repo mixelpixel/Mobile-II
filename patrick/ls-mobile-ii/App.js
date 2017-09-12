@@ -1,13 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 import Home from './components/home';
 import SignIn from './components/signin';
 import SignUp from './components/signup';
 import Content from './components/content';
-import Async from './Async';
+// import Async from './Async';
 
 export default class App extends React.Component {
+// class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -30,3 +32,13 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
+
+// const Routes = StackNavigator({
+//   Home: { screen: Home },
+//   SignIn: { screen: SignIn },
+//   SignUp: { screen: SignUp },
+//   Content: { screen: Content },
+//   // Async: { screen: Async },
+// });
+//
+// export default Routes;

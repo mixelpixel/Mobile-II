@@ -5,6 +5,7 @@ import Home from './components/home';
 import SignIn from './components/signin';
 import SignUp from './components/signup';
 import Content from './components/content';
+import Async from '.Async';
 
 export default class App extends React.Component {
   render() {

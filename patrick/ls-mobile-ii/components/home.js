@@ -5,7 +5,7 @@ import { StackNavigator } from 'react-navigation';
 import SignIn from './signin';
 import SignUp from './signup';
 import Content from './content';
-// import Async from '../Async';
+import Async from '../Async';
 
 
 class Home extends React.Component {
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     // backgroundColor: '#fff',
     // alignItems: 'center',
     // justifyContent: 'center',
+    marginTop: 20,
   },
 });
 
@@ -32,7 +33,7 @@ const Routes = StackNavigator({
   SignIn: { screen: SignIn },
   SignUp: { screen: SignUp },
   Content: { screen: Content },
-  // Async: { screen: Async },
+  Async: { screen: Async },
 });
 
 export default Routes;

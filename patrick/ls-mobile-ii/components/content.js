@@ -2,6 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class Content extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      foods: [{ text: 'Pineapple' }, { text: 'Tomato' }]
+    };
+  }
+
+  static navigationOptions = {
+    title: 'Content Page'
+  }
+
   render() {
     return (
       <View style={styles.container}>

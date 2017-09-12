@@ -8,8 +8,19 @@ import SignUp from './components/signup';
 import Content from './components/content';
 // import Async from './Async';
 
-export default class App extends React.Component {
-// class App extends React.Component {
+// export default class App extends React.Component {
+class App extends React.Component {
+constructor(props) {
+  super(props);
+  this.state = {
+    // email: ''
+  };
+}
+
+static navigationOptions = {
+  title: 'App Page'
+}
+
   render() {
     return (
       <View style={styles.container}>
@@ -29,16 +40,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'whitesmoke',
     // alignItems: 'center',
     // justifyContent: 'center',
-    marginTop: 20,
+    // marginTop: 20,
   },
 });
 
-// const Routes = StackNavigator({
-//   Home: { screen: Home },
-//   SignIn: { screen: SignIn },
-//   SignUp: { screen: SignUp },
-//   Content: { screen: Content },
-//   // Async: { screen: Async },
-// });
-//
-// export default Routes;
+const Routes = StackNavigator({
+  Home: { screen: Home },
+  SignIn: { screen: SignIn },
+  SignUp: { screen: SignUp },
+  Content: { screen: Content },
+  // Async: { screen: Async },
+});
+
+export default Routes;

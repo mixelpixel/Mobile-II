@@ -3,9 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import Home from './components/home';
-import SignIn from './components/signin';
-import SignUp from './components/signup';
-import Content from './components/content';
+// import SignIn from './components/signin';
+// import SignUp from './components/signup';
+// import Content from './components/content';
 // import Async from './Async';
 
 // export default class App extends React.Component {
@@ -26,9 +26,9 @@ static navigationOptions = {
       <View style={styles.container}>
         <Text>This is from the App container</Text>
         <Home />
-        <SignIn />
+        {/* <SignIn />
         <SignUp />
-        <Content />
+        <Content /> */}
       </View>
     );
   }
@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
 
 const Routes = StackNavigator({
   Home: { screen: Home },
-  SignIn: { screen: SignIn },
-  SignUp: { screen: SignUp },
-  Content: { screen: Content },
+  // SignIn: { screen: SignIn },
+  // SignUp: { screen: SignUp },
+  // Content: { screen: Content },
   // Async: { screen: Async },
 });
 

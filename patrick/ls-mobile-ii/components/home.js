@@ -1,19 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import { StackNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 
-// import SignIn from './signin';
-// import SignUp from './signup';
-// import Content from './content';
+import SignIn from './signin';
+import SignUp from './signup';
+import Content from './content';
 // import Async from '../Async';
 
 
-export default class Home extends React.Component {
-// class Home extends React.Component {
+// export default class Home extends React.Component {
+class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>This is from the Home component</Text>
+        <SignIn />
+        <SignUp />
+        <Content />
       </View>
     );
   }
@@ -29,12 +32,12 @@ const styles = StyleSheet.create({
   },
 });
 //
-// const Routes = StackNavigator({
+const Routes = StackNavigator({
 //   Home: { screen: Home },
-//   SignIn: { screen: SignIn },
-//   SignUp: { screen: SignUp },
-//   Content: { screen: Content },
+  SignIn: { screen: SignIn },
+  SignUp: { screen: SignUp },
+  Content: { screen: Content },
 //   Async: { screen: Async },
-// });
+});
 //
-// export default Routes;
+export default Routes;

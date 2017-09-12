@@ -1,7 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-export default class Home extends React.Component {
+import SignIn from './signin';
+import SignUp from './signup';
+import Content from './content';
+// import Async from '../Async';
+
+
+class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -19,3 +26,13 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
 });
+
+const Routes = StackNavigator({
+  Home: { screen: Home },
+  SignIn: { screen: SignIn },
+  SignUp: { screen: SignUp },
+  Content: { screen: Content },
+  // Async: { screen: Async },
+});
+
+export default Routes;

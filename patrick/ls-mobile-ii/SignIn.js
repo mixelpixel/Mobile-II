@@ -18,6 +18,7 @@ export default class SignIn extends React.Component {
     this.state = {
       email: '',
       password: '',
+      passwordConfirm: '',
     };
     this.signIn = this.signIn.bind(this);
   }
@@ -55,11 +56,6 @@ export default class SignIn extends React.Component {
           placeholder={'password'}
           onChangeText={(password) => this.setState({ password })}
           value={this.state.password} />
-        {/* <TextInput
-          style={styles.input}
-          placeholder={'confirm password'}
-          onChangeText={(password) => this.setState({ password })}
-          value={this.state.password} /> */}
         <Button
           title={'Press here to Sign In.'}
           onPress={this.signIn}
@@ -79,12 +75,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     // borderColor: 'red',
     // backgroundColor: 'pink',
-    borderRadius: 20,
-    // marginLeft: 30,
-    marginRight: 5,
+    borderRadius: 10,
+    marginLeft: 10,
+    // marginRight: 5,
     marginTop: 2,
     marginBottom: 2,
     width: width * .85,
-    padding: 8,
+    padding: 2  ,
   },
 });

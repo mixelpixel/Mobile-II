@@ -51,8 +51,8 @@ export default class SignUp extends React.Component {
   render() {
     return (
       <View style={styles.searchbar}>
-        <Text>Enter your email address:</Text>
         <Text>{this.state.error && this.state.error.length ? this.state.error : null}</Text>
+        <Text>Enter your email address:</Text>
         <TextInput
           style={styles.input}
           placeholder={'email'}
@@ -71,7 +71,10 @@ export default class SignUp extends React.Component {
           onChangeText={(passwordConfirm) => this.setState({ passwordConfirm })}
           value={this.state.passwordConfirm}
           secureTextEntry={true} />
-        <Text>{this.state.password === this.state.passwordConfirm ? 'Your password matches!' : 'Please confirm password'}</Text>
+        <Text>
+          {/* {this.state.password === this.state.passwordConfirm ? 'Your password matches!' : 'Please confirm password'} */}
+          {this.state.password === '' ? 'Please confirm your password' : this.state.password === this.state.passwordConfirm ? 'Your password matches!' : 'Your password doesn\'t match!'}
+        </Text>
         <Button
           title={'Press here to Sign Up!'}
           onPress={this.signUp}

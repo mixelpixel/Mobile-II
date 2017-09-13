@@ -80,8 +80,9 @@ export default class SignUp extends React.Component {
           onPress={this.signUp}
         />
         <Image
-          source={{ uri: 'http://mylittlepony.eaglemoss.com/Content/images/bpony.png' }}
-          style={{ height: height / 2, width: width }} />
+          // source={{ uri: 'http://mylittlepony.eaglemoss.com/Content/images/bpony.png' }}
+          source={{ uri: 'https://media.giphy.com/media/cDdx2FrW7b3sk/giphy.gif' }}
+          style={{ height: height / 2, width: width, resizeMode: 'stretch' }} />
       </View>
     );
   }

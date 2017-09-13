@@ -40,7 +40,6 @@ export default class SignUp extends React.Component {
         });
       }
       AsyncStorage.setItem('token', response.data.token).then(() => {
-        // this.props.navigate('SignIn');
         this.props.navigation.navigate('Content');
       });
     }).catch((error) => {
@@ -51,6 +50,7 @@ export default class SignUp extends React.Component {
   render() {
     return (
       <View style={styles.searchbar}>
+        {/* WHAT DOES THIS TERNARY ERROR CHECK DO?????? */}
         <Text>{this.state.error && this.state.error.length ? this.state.error : null}</Text>
         <Text>Enter your email address:</Text>
         <TextInput

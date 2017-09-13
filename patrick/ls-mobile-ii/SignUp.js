@@ -8,15 +8,16 @@ import {
   Dimensions,
   AsyncStorage,
 } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+// import { StackNavigator } from 'react-navigation';
 import axios from 'axios';
 
-import Content from './Content';
+// import Content from './Content';
+// import SignIn from './SignIn';
 
 const { width, height } = Dimensions.get('window');
 
 
-class SignUp extends React.Component {
+export default class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,6 +25,10 @@ class SignUp extends React.Component {
       password: '',
     };
     this.signUp = this.signUp.bind(this);
+  }
+
+  static navigationOptions = {
+    title: 'Sign Up'
   }
 
   signUp() {
@@ -38,7 +43,8 @@ class SignUp extends React.Component {
         });
       }
       AsyncStorage.setItem('token', response.data.token).then(() => {
-        this.props.navigate('Content');
+        // this.props.navigate('Content');
+        this.props.navigate('SignIn');
       });
     }).catch((error) => {
       console.log(error);
@@ -57,15 +63,16 @@ class SignUp extends React.Component {
     return (
       <View style={styles.searchbar}>
         <Text>Enter your email address:</Text>
-        <Text>{this.state.error && this.state.error.length ? this.state.error : null}</Text>
+        {/* <Text>{this.state.error && this.state.error.length ? this.state.error : null}</Text> */}
         <TextInput
           style={styles.input}
-          // placeHolder={'poop on a stick?'}
+          placeholder={'email'}
           onChangeText={(email) => this.setState({ email })}
           value={this.state.email} />
         <Text>Enter your password:</Text>
         <TextInput
           style={styles.input}
+          placeholder={'password'}
           onChangeText={(password) => this.setState({ password })}
           value={this.state.password} />
         <Button
@@ -87,19 +94,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     // borderColor: 'red',
     // backgroundColor: 'pink',
-    borderRadius: 20,
-    // marginLeft: 30,
-    marginRight: 5,
+    borderRadius: 10,
+    marginLeft: 10,
+    // marginRight: 5,
     marginTop: 2,
     marginBottom: 2,
     width: width * .85,
-    padding: 8,
+    padding: 2  ,
   },
 });
 
-const Routes = StackNavigator({
-  SignUp: { screen: SignUp },
-  Content: { screen: Content },
-});
-
-export default Routes;
+// const Routes = StackNavigator({
+//   SignUp: { screen: SignUp },
+//   Content: { screen: Content },
+// });
+//
+// export default Routes;

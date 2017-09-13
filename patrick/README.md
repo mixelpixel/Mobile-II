@@ -1,4 +1,6 @@
 # Mobile II
+- see also: https://github.com/SunJieMing/LS-Mobile-III-Example/blob/master/main.js
+- see also: https://github.com/SunJieMing/Mobile-Server
 
 ## Topics - OKAY √
 

@@ -32,7 +32,7 @@ export default class SignUp extends React.Component {
   }
 
   signUp() {
-    console.log(this.state);
+    console.log('SignUp:',this.state);
     axios.post('https://mobile-server-ii.herokuapp.com/users', {
       email: this.state.email,
       password: this.state.password,
@@ -51,14 +51,6 @@ export default class SignUp extends React.Component {
     });
   }
 
-  // componentDidMount() {
-  //   axios.post('https://mobile-server-ii.herokuapp.com/users').then((response) => {
-  //     this.setState({
-  //       posts: response,
-  //     });
-  //   });
-  // }
-
   render() {
     return (
       <View style={styles.searchbar}>
@@ -76,7 +68,7 @@ export default class SignUp extends React.Component {
           onChangeText={(password) => this.setState({ password })}
           value={this.state.password} />
         <Button
-          title={'Submit'}
+          title={'Press here to Sign Up!'}
           onPress={this.signUp}
         />
       </View>

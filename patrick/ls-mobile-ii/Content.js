@@ -2,7 +2,7 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
-  View,
+  ScrollView,
   AsyncStorage,
   FlatList,
   Image,
@@ -39,7 +39,7 @@ export default class Content extends React.Component {
 
  render() {
   return (
-    <View>
+    <ScrollView>
       <Image
         source={{ uri: 'https://media.tenor.com/images/7f7f2882899755a705a2953b6fcfc263/tenor.gif' }}
         style={{ height: height, width: width }}
@@ -51,7 +51,7 @@ export default class Content extends React.Component {
           keyExtractor= { item => item._id }
         />
       </Image>
-    </View>
+    </ScrollView>
   );
  }
 }

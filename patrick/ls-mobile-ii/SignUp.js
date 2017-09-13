@@ -82,6 +82,7 @@ export default class SignUp extends React.Component {
         <Image
           // source={{ uri: 'http://mylittlepony.eaglemoss.com/Content/images/bpony.png' }}
           source={{ uri: 'https://media.giphy.com/media/cDdx2FrW7b3sk/giphy.gif' }}
+          // source={{ uri: 'https://media1.giphy.com/media/GCukKyf32k9B6/giphy.gif' }}
           style={{ height: height / 2, width: width, resizeMode: 'stretch' }} />
       </View>
     );

@@ -41,6 +41,7 @@ export default class SignUp extends React.Component {
       }
       AsyncStorage.setItem('token', response.data.token).then(() => {
         this.props.navigation.navigate('Content');
+        // this.props.navigate('Content');
       });
     }).catch((error) => {
       console.log(error);

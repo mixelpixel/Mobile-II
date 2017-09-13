@@ -35,6 +35,7 @@ export default class SignIn extends React.Component {
     }).then((response) => {
       AsyncStorage.setItem('token', response.data.token).then(() => {
         this.props.navigation.navigate('Content');
+        // this.props.navigate('Content');
       });
     }).catch((error) => {
       console.log(error);

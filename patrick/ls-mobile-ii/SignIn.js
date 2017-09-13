@@ -4,8 +4,9 @@ import {
   Text,
   View,
   TextInput,
+  Button,
   Dimensions,
-  // AsyncStorage
+  AsyncStorage,
 } from 'react-native';
 import axios from 'axios';
 
@@ -18,25 +19,26 @@ export default class SignIn extends React.Component {
       email: '',
       password: '',
     };
+    this.signIn = this.signIn.bind(this);
   }
 
-  // AsyncStorage.getItem('token').then((token) => { // retrieve the token from "localStorage"
-  //   axios.post('https://mobile-server-ii.herokuapp.com/users', {
-  //     headers: {
-  //       authorization: token, // attach the token as a header
-  //     }
-  //   }).then((response) => {
-  //     // Update state in here
-  //   });
-  // });
+  static navigationOptions = {
+    title: 'Sign In'
+  }
 
-  // componentDidMount() {
-  //   axios.post('https://mobile-server-ii.herokuapp.com/signin').then((response) => {
-  //     this.setState({
-  //       posts: response,
-  //     });
-  //   });
-  // }
+  signIn() {
+    console.log('SignIn:', this.state);
+    axios.post('https://mobile-server-ii.herokuapp.com/signin', {
+      email: this.state.email,
+      password: this.state.password,
+    }).then((response) => {
+      AsyncStorage.setItem('token', response.data.token).then(() => {
+        this.props.navigate('Content');
+      });
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
 
   render() {
     return (
@@ -44,14 +46,24 @@ export default class SignIn extends React.Component {
         <Text>Enter your email address:</Text>
         <TextInput
           style={styles.input}
-          // placeHolder={'poop on a stick'}
+          placeholder={'email'}
           onChangeText={(email) => this.setState({ email })}
           value={this.state.email} />
         <Text>Enter your password:</Text>
         <TextInput
           style={styles.input}
+          placeholder={'password'}
           onChangeText={(password) => this.setState({ password })}
           value={this.state.password} />
+        {/* <TextInput
+          style={styles.input}
+          placeholder={'confirm password'}
+          onChangeText={(password) => this.setState({ password })}
+          value={this.state.password} /> */}
+        <Button
+          title={'Press here to Sign In.'}
+          onPress={this.signIn}
+        />
       </View>
     );
   }

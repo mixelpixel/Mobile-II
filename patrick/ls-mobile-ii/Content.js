@@ -47,7 +47,9 @@ export default class Content extends React.Component {
         <FlatList
           style={{ opacity: .8 }}
           data={this.state.users}
-          renderItem={({item}) => <Text>{ item.email }</Text>}
+          renderItem={({item}) => {
+            return <Text>{ ['\nEMAIL', item.email, '\rPASSWORD', item.password] }</Text>
+          }}
           keyExtractor= { item => item._id }
         />
       </Image>

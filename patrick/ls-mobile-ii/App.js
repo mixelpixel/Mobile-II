@@ -15,18 +15,18 @@ import Content from './Content';
 const { width, height } = Dimensions.get('window');
 
 class Home extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.navigateToContents = this.navigateToContents.bind(this);
-  // }
+  constructor(props) {
+    super(props);
+    this.navigateToContents = this.navigateToContents.bind(this);
+  }
 
   static navigationOptions = {
     title: 'You\'re HOME',
   }
 
-  // navigateToContents(route) {
-  //   this.props.navigation.navigate(route);
-  // }
+  navigateToContents(route) {
+    this.props.navigation.navigate(route);
+  }
 
   render() {
     return (
@@ -74,7 +74,6 @@ const styles = StyleSheet.create({
     // backgroundColor: '#fff',
     // alignItems: 'center',
     // justifyContent: 'center',
-    // zIndex: 2,
   },
   buttonList: {
     alignItems: 'center',

@@ -18,7 +18,6 @@ export default class SignIn extends React.Component {
     this.state = {
       email: '',
       password: '',
-      passwordConfirm: '',
     };
     this.signIn = this.signIn.bind(this);
   }
@@ -34,7 +33,7 @@ export default class SignIn extends React.Component {
       password: this.state.password,
     }).then((response) => {
       AsyncStorage.setItem('token', response.data.token).then(() => {
-        this.props.navigate('Content');
+        this.props.navigation.navigate('Content');
       });
     }).catch((error) => {
       console.log(error);
@@ -73,11 +72,8 @@ const styles = StyleSheet.create({
   input: {
     height: 25,
     borderWidth: 1,
-    // borderColor: 'red',
-    // backgroundColor: 'pink',
     borderRadius: 10,
     marginLeft: 10,
-    // marginRight: 5,
     marginTop: 2,
     marginBottom: 2,
     width: width * .85,

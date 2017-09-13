@@ -9,11 +9,7 @@ import {
   AsyncStorage,
   Image,
 } from 'react-native';
-// import { StackNavigator } from 'react-navigation';
 import axios from 'axios';
-
-// import Content from './Content';
-// import SignIn from './SignIn';
 
 const { width, height } = Dimensions.get('window');
 
@@ -23,6 +19,7 @@ export default class SignUp extends React.Component {
     this.state = {
       email: '',
       password: '',
+      passwordConfirm: '',
     };
     this.signUp = this.signUp.bind(this);
   }
@@ -43,8 +40,8 @@ export default class SignUp extends React.Component {
         });
       }
       AsyncStorage.setItem('token', response.data.token).then(() => {
-        // this.props.navigate('Content');
-        this.props.navigate('SignIn');
+        // this.props.navigate('SignIn');
+        this.props.navigation.navigate('Content');
       });
     }).catch((error) => {
       console.log(error);
@@ -55,7 +52,7 @@ export default class SignUp extends React.Component {
     return (
       <View style={styles.searchbar}>
         <Text>Enter your email address:</Text>
-        {/* <Text>{this.state.error && this.state.error.length ? this.state.error : null}</Text> */}
+        <Text>{this.state.error && this.state.error.length ? this.state.error : null}</Text>
         <TextInput
           style={styles.input}
           placeholder={'email'}
@@ -89,27 +86,16 @@ export default class SignUp extends React.Component {
 
 const styles = StyleSheet.create({
   searchbar: {
-    // flexDirection: 'row',
     paddingTop: 2,
   },
   input: {
     height: 25,
     borderWidth: 1,
-    // borderColor: 'red',
-    // backgroundColor: 'pink',
     borderRadius: 10,
     marginLeft: 10,
-    // marginRight: 5,
     marginTop: 2,
     marginBottom: 2,
     width: width * .85,
     padding: 2  ,
   },
 });
-
-// const Routes = StackNavigator({
-//   SignUp: { screen: SignUp },
-//   Content: { screen: Content },
-// });
-//
-// export default Routes;

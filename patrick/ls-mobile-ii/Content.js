@@ -5,8 +5,12 @@ import {
   View,
   AsyncStorage,
   FlatList,
+  Image,
+  Dimensions,
 } from 'react-native';
 import axios from 'axios';
+
+const { width, height } = Dimensions.get('window');
 
 export default class Content extends React.Component {
   constructor(props) {
@@ -36,11 +40,17 @@ export default class Content extends React.Component {
  render() {
   return (
     <View>
-      <FlatList
-        data={this.state.users}
-        renderItem={({item}) => <Text>{ item.email }</Text>}
-        keyExtractor= { item => item._id }
-      />
+      <Image
+        source={{ uri: 'https://media.tenor.com/images/7f7f2882899755a705a2953b6fcfc263/tenor.gif' }}
+        style={{ height: height, width: width }}
+        >
+        <FlatList
+          style={{ opacity: .8 }}
+          data={this.state.users}
+          renderItem={({item}) => <Text>{ item.email }</Text>}
+          keyExtractor= { item => item._id }
+        />
+      </Image>
     </View>
   );
  }

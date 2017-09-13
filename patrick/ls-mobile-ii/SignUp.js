@@ -7,6 +7,7 @@ import {
   Button,
   Dimensions,
   AsyncStorage,
+  Image,
 } from 'react-native';
 // import { StackNavigator } from 'react-navigation';
 import axios from 'axios';
@@ -15,7 +16,6 @@ import axios from 'axios';
 // import SignIn from './SignIn';
 
 const { width, height } = Dimensions.get('window');
-
 
 export default class SignUp extends React.Component {
   constructor(props) {
@@ -79,6 +79,9 @@ export default class SignUp extends React.Component {
           title={'Press here to Sign Up!'}
           onPress={this.signUp}
         />
+        <Image
+          source={{ uri: 'http://mylittlepony.eaglemoss.com/Content/images/bpony.png' }}
+          style={{ height: height / 2, width: width }} />
       </View>
     );
   }

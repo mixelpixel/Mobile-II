@@ -10,28 +10,24 @@ import { StackNavigator } from 'react-navigation';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Content from './Content';
-import Async from './Async';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      email: ''
-    };
+    this.navigateToContents = this.navigateToContents.bind(this);
   }
 
   static navigationOptions = {
-    title: 'Home Page'
+    title: 'Sign Up, eh?',
+  }
+
+  navigateToContents() {
+    this.props.navigation.navigate('Content');
   }
 
   render() {
     return (
       <View style={styles.container}>
-        {/* <Text>Enter your email address:</Text>
-        <TextInput
-          style={{ width: 50 }}
-          onChangeText={(email) => this.setState({ email })}
-          value={this.state.email} /> */}
         <Button
           title={'SignIn'}
           onPress={() => {
@@ -43,9 +39,9 @@ class Home extends React.Component {
             this.props.navigation.navigate('SignUp');
           }} />
         <Button
-          title={'View Async Content'}
+          title={'Are You Authorized To View This Content?'}
           onPress={() => {
-            this.props.navigation.navigate('Async');
+            this.props.navigation.navigate('Content');
           }} />
       </View>
     );
@@ -66,7 +62,6 @@ const Routes = StackNavigator({
   SignIn: { screen: SignIn },
   SignUp: { screen: SignUp },
   Content: { screen: Content },
-  Async: { screen: Async },
 });
 
 export default Routes;

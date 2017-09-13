@@ -24,8 +24,8 @@ class Home extends React.Component {
     title: 'You\'re HOME',
   }
 
-  // navigateToContents() {
-  //   this.props.navigation.navigate('Content');
+  // navigateToContents(route) {
+  //   this.props.navigation.navigate(route);
   // }
 
   render() {
@@ -41,18 +41,21 @@ class Home extends React.Component {
               title={'SignIn'}
               onPress={() => {
                 this.props.navigation.navigate('SignIn');
+                // navigateToContents('SignIn');
               }} />
             <Button
               style={styles.button}
               title={'SignUp'}
               onPress={() => {
                 this.props.navigation.navigate('SignUp');
+                // navigateToContents('SignUp');
               }} />
             <Button
               style={styles.button}
               title={'Are You Authorized To View This Content, Agent Smith?'}
               onPress={() => {
                 this.props.navigation.navigate('Content');
+                // navigateToContents('Content');
               }} />
               <Image
                 style={{ height: height / 2, width: width, opacity: 1 }}

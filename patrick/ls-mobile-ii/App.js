@@ -33,7 +33,7 @@ class Home extends React.Component {
       <View style={styles.container}>
         <Image
           source={{ uri: 'https://media.tenor.com/images/7f7f2882899755a705a2953b6fcfc263/tenor.gif' }}
-          style={{ height: height, width: width }}
+          style={{ height: height, width: width, resizeMode: 'stretch' }}
           >
           <View style={styles.buttonList}>
             <Button
@@ -57,11 +57,12 @@ class Home extends React.Component {
                 this.props.navigation.navigate('Content');
                 // navigateToContents('Content');
               }} />
-              <Image
-                style={{ height: height / 2, width: width, opacity: 1 }}
-                source={{uri: 'https://static.giantbomb.com/uploads/original/15/155745/2179153-18079_26016.gif'}}
-              />
+
           </View>
+          <Image
+            style={{ height: height / 2, width: width, opacity: 1 }}
+            source={{uri: 'https://static.giantbomb.com/uploads/original/15/155745/2179153-18079_26016.gif'}}
+          />
         </Image>
       </View>
     );
@@ -77,12 +78,12 @@ const styles = StyleSheet.create({
   },
   buttonList: {
     alignItems: 'center',
+    opacity: .8,
   },
   button: {
     borderWidth: 2,
     borderColor: 'green',
     borderRadius: 20,
-    opacity: .8,
   },
 });
 

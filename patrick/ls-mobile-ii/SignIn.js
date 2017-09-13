@@ -55,7 +55,8 @@ export default class SignIn extends React.Component {
           style={styles.input}
           placeholder={'password'}
           onChangeText={(password) => this.setState({ password })}
-          value={this.state.password} />
+          value={this.state.password}
+          secureTextEntry={true} />
         <Button
           title={'Press here to Sign In.'}
           onPress={this.signIn}

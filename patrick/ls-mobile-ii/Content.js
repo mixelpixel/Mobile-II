@@ -48,7 +48,7 @@ export default class Content extends React.Component {
           style={{ opacity: .8 }}
           data={this.state.users}
           renderItem={({item}) => {
-            return <Text>{ ['\nEMAIL', item.email, '\rPASSWORD', item.password] }</Text>
+            return <Text>{ ['\nEMAIL: ', item.email, '\rPASSWORD: ', item.password] }</Text>
           }}
           keyExtractor= { item => item._id }
         />

@@ -4,7 +4,6 @@ import {
   Text,
   View,
   Button,
-  TextInput
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import SignIn from './SignIn';
@@ -12,18 +11,18 @@ import SignUp from './SignUp';
 import Content from './Content';
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.navigateToContents = this.navigateToContents.bind(this);
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.navigateToContents = this.navigateToContents.bind(this);
+  // }
 
   static navigationOptions = {
-    title: 'Sign Up, eh?',
+    title: 'You\'re HOME',
   }
 
-  navigateToContents() {
-    this.props.navigation.navigate('Content');
-  }
+  // navigateToContents() {
+  //   this.props.navigation.navigate('Content');
+  // }
 
   render() {
     return (

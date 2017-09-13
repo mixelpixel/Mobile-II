@@ -7,6 +7,7 @@ import {
   Button,
   Dimensions,
   AsyncStorage,
+  Image,
 } from 'react-native';
 import axios from 'axios';
 
@@ -59,6 +60,9 @@ export default class SignIn extends React.Component {
           title={'Press here to Sign In.'}
           onPress={this.signIn}
         />
+        <Image
+          source={{ uri: 'https://media.tenor.com/images/44fbe7833375c0d0f7fce91f164dc76d/tenor.gif' }}
+          style={{ height: height / 2, width: width }} />
       </View>
     );
   }

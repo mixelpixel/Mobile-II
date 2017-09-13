@@ -66,7 +66,15 @@ export default class SignUp extends React.Component {
           style={styles.input}
           placeholder={'password'}
           onChangeText={(password) => this.setState({ password })}
-          value={this.state.password} />
+          value={this.state.password}
+          secureTextEntry={true} />
+        <TextInput
+          style={styles.input}
+          placeholder={'confirm password'}
+          onChangeText={(passwordConfirm) => this.setState({ passwordConfirm })}
+          value={this.state.passwordConfirm}
+          secureTextEntry={true} />
+        <Text>{this.state.password === this.state.passwordConfirm ? 'Your password matches!' : 'Please confirm password'}</Text>
         <Button
           title={'Press here to Sign Up!'}
           onPress={this.signUp}
